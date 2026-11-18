@@ -10,6 +10,13 @@
 - **退出码**：2（检测完成，发现 3 条 warning 级问题）
 - **原始报告**：`portfolio-audit.json`
 
+## 第二次检测：线上部署站点（未成功，留档）
+
+- **命令**：`npx impeccable detect https://sxr-design.github.io/ --json`
+- **结果**：导航超时（Navigation timeout 30000ms），4 次重试均失败（stderr 留档 `portfolio-site-audit-stderr.txt`，空结果 `portfolio-site-audit.json`）
+- **原因**：GitHub Pages 在国内网络环境下的常见访问超时；对渲染型页面的 URL 扫描受网络质量影响大
+- **处置**：以本地构建产物扫描为准（构建产物与线上部署同源，CSS/HTML 级规则检测结论一致）；CI 场景应部署在目标用户网络可达的托管服务上
+
 ## 发现的问题
 
 | # | 规则 | 位置 | 内容 | 处置建议 |
