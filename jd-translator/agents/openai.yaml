@@ -1,0 +1,4 @@
+interface:
+  display_name: "JD 翻译官"
+  short_description: "从多 JD 聚类、材料分版到证据访谈与定向 CV 重写"
+  default_prompt: "使用 $jd-translator 分析我提供的多个 JD，区分高频岗位能力、通用能力和低频关键项；优先判断一份简历能否覆盖，只有不能覆盖时才拆分方向，再通过提问补证并重写 CV。"
